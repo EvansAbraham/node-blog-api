@@ -14,6 +14,7 @@ export const createUser = (req, res) => {
     users.push({...user, id: uuid()});
     
     console.log(`User [${user.username}] added to the database.`);
+    console.log(users);
     
     res.status(201).send({ message: "User created", user });
 };
@@ -22,7 +23,8 @@ export const getUser = (req, res) => {
     const user = users.find((user) => user.id === req.params.id);
     
     if (user) {
-        res.send({ username: user.username, age: user.age });
+        res.send({id: user.id, username: user.username, age: user.age });
+        console.log(`Users in the database: ${users}`);
     } else {
         res.status(404).send({ message: "User not found" });
     }
