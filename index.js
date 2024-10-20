@@ -1,16 +1,15 @@
 import express from "express";
 import bodyParser from "body-parser";
-import usersRoute from "./routes/users.js"
+
+import usersRoutes from "./routes/users.js";
 
 const app = express();
 const PORT = 4400;
 
 app.use(bodyParser.json());
 
-app.use('/users', usersRoute);
+app.use("/people", usersRoutes);
+app.get("/", (req, res) => res.send("Welcome to the Users API!"));
+app.all("*", (req, res) =>res.send("You've tried reaching a route that doesn't exist."));
 
-app.get('/', (req, res)=>{
-    res.send("The server is working!");
-});
-
-app.listen(PORT, ()=>{console.log(`Server started running at port ${PORT}: http://localhost:${PORT}`)});
+app.listen(PORT, () =>console.log(`Server running on port: http://localhost:${PORT}`));
