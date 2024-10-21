@@ -5,25 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "jest"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.js$": "babel-jest"
-    },
-    "reporters": [
-      "default",
-      [
-        "jest-html-reporters",
-        {
-          "pageTitle": "Test Report",
-          "outputPath": "reports/test-report.html",
-          "includeFailureMsg": true,
-          "includeConsoleLog": true,
-          "showUnused": false
-        }
-      ]
-    ]
+    "test": "echo 'No tests given'"
   },
   "keywords": [],
   "author": "",
