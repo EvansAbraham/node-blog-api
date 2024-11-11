@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo 'No tests given'"
+    "test": "echo 'No tests given'",
+    "build": "echo 'Build command is running!'"
   },
   "keywords": [],
   "author": "",
